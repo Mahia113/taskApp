@@ -2,7 +2,7 @@
 //  ChartsPresenter.swift
 //  My tasks  project
 //
-//  Created by Anzen on 13/04/22.
+//  Created by Mahia113
 //
 
 import Foundation
@@ -10,7 +10,7 @@ import Combine
 
 
 protocol ChartsViewControllerDelegate:NSObjectProtocol {
-    func chartData(charts: [QuestionModel])
+    func chartData(charts: RootChartsModel)
     func errorGettingCharts(error: String)
 }
 
@@ -38,8 +38,8 @@ class ChartsPresenter {
                 break
             }
             
-        }, receiveValue: { QuestionModelArray in
-            self.chartsViewControllerDelegate?.chartData(charts: QuestionModelArray)
+        }, receiveValue: { rooChartData in
+            self.chartsViewControllerDelegate?.chartData(charts: rooChartData)
         })
     }
     

@@ -17,13 +17,14 @@
 		177319812805D37100742C7B /* AlertPhotoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 177319802805D37100742C7B /* AlertPhotoView.xib */; };
 		177319832805DAE700742C7B /* PhotoViewAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177319822805DAE700742C7B /* PhotoViewAlert.swift */; };
 		17BA3634280771BE00D6E151 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 17BA3633280771BE00D6E151 /* Charts */; };
+		17BA3636280A070C00D6E151 /* ChartViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BA3635280A070C00D6E151 /* ChartViewCell.swift */; };
 		17EE5CCF28062E51003DDA0C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 17EE5CCE28062E51003DDA0C /* GoogleService-Info.plist */; };
 		17EE5CD2280636A1003DDA0C /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 17EE5CD1280636A1003DDA0C /* FirebaseAnalytics */; };
 		17EE5CD4280636A1003DDA0C /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 17EE5CD3280636A1003DDA0C /* FirebaseDatabase */; };
 		17EE5CD6280636A1003DDA0C /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 17EE5CD5280636A1003DDA0C /* FirebaseFirestore */; };
 		17EE5CD8280636A1003DDA0C /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 17EE5CD7280636A1003DDA0C /* FirebaseStorage */; };
 		17EE5CDB28073F5E003DDA0C /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 17EE5CDA28073F5E003DDA0C /* Toast */; };
-		17EE5CDD28074233003DDA0C /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EE5CDC28074233003DDA0C /* extensions.swift */; };
+		17EE5CDD28074233003DDA0C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EE5CDC28074233003DDA0C /* Extensions.swift */; };
 		17EE5CE02807441D003DDA0C /* NetworkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EE5CDF2807441D003DDA0C /* NetworkHandler.swift */; };
 		17EE5CE22807447B003DDA0C /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EE5CE12807447B003DDA0C /* Models.swift */; };
 		17EE5CE42807452B003DDA0C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EE5CE32807452B003DDA0C /* NetworkManager.swift */; };
@@ -44,8 +45,9 @@
 		1749AF182804C2E300225767 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		177319802805D37100742C7B /* AlertPhotoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertPhotoView.xib; sourceTree = "<group>"; };
 		177319822805DAE700742C7B /* PhotoViewAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewAlert.swift; sourceTree = "<group>"; };
+		17BA3635280A070C00D6E151 /* ChartViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewCell.swift; sourceTree = "<group>"; };
 		17EE5CCE28062E51003DDA0C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		17EE5CDC28074233003DDA0C /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
+		17EE5CDC28074233003DDA0C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		17EE5CDF2807441D003DDA0C /* NetworkHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHandler.swift; sourceTree = "<group>"; };
 		17EE5CE12807447B003DDA0C /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		17EE5CE32807452B003DDA0C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -110,7 +112,7 @@
 				17EE5CCC28062DD7003DDA0C /* Scenes */,
 				17EE5CCB28062DAD003DDA0C /* Alerts */,
 				17EE5CCA28062D9E003DDA0C /* Controllers */,
-				17EE5CDC28074233003DDA0C /* extensions.swift */,
+				17EE5CDC28074233003DDA0C /* Extensions.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -129,6 +131,7 @@
 			children = (
 				1749AF062803C0BD00225767 /* MainViewController.swift */,
 				17EE5CE728075690003DDA0C /* ChartsViewController.swift */,
+				17BA3635280A070C00D6E151 /* ChartViewCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 			files = (
 				17EE5CE42807452B003DDA0C /* NetworkManager.swift in Sources */,
 				17EE5CE828075690003DDA0C /* ChartsViewController.swift in Sources */,
+				17BA3636280A070C00D6E151 /* ChartViewCell.swift in Sources */,
 				1749AF072803C0BD00225767 /* MainViewController.swift in Sources */,
 				1749AF032803C0BD00225767 /* AppDelegate.swift in Sources */,
 				177319832805DAE700742C7B /* PhotoViewAlert.swift in Sources */,
@@ -263,7 +267,7 @@
 				17EE5CE22807447B003DDA0C /* Models.swift in Sources */,
 				1749AF052803C0BD00225767 /* SceneDelegate.swift in Sources */,
 				1749AF192804C2E300225767 /* MainPresenter.swift in Sources */,
-				17EE5CDD28074233003DDA0C /* extensions.swift in Sources */,
+				17EE5CDD28074233003DDA0C /* Extensions.swift in Sources */,
 				17EE5CE02807441D003DDA0C /* NetworkHandler.swift in Sources */,
 				17EE5CE6280745AF003DDA0C /* ModuleOrchestrator.swift in Sources */,
 			);

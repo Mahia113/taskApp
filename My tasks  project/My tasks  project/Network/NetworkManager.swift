@@ -2,7 +2,7 @@
 //  NetworkManager.swift
 //  My tasks  project
 //
-//  Created by Anzen on 13/04/22.
+//  Created by Mahia113
 //
 
 
@@ -19,16 +19,16 @@ public struct NetworkManager {
         self.client = client
     }
     
-    func getChartData() -> Future <[QuestionModel], Error> {
+    func getChartData() -> Future <RootChartsModel, Error> {
         return Future() { promise in
             
             networkHandler.performAPIRequestByURL(url: URL) {
                 switch $0 {
                     case .success(let data):
                         if let rootChartData: RootChartsModel = self.networkHandler.decodeJSONData(data: data){
-                            let questions = rootChartData.questions
+                            let rootData = rootChartData
                             
-                            promise(.success(questions))
+                            promise(.success(rootData))
                         }
                     case .failure(let error):
                         promise(.failure(error))

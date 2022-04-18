@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -134,6 +135,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="uka-WF-pfu" secondAttribute="bottom" id="vD6-JP-8j9"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Kxd-47-U88"/>
                     <connections>
                         <outlet property="buttonGraphics" destination="rNT-GW-HjI" id="Nta-KB-66N"/>
                         <outlet property="buttonPhoto" destination="uEB-6h-ycg" id="8ew-UF-vr9"/>
@@ -146,12 +148,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="165" y="108"/>
+            <point key="canvasLocation" x="501" y="108"/>
         </scene>
         <!--Charts View Controller-->
         <scene sceneID="qzV-Vi-hGg">
             <objects>
-                <viewController id="Tf1-Pl-ZLj" customClass="ChartsViewController" customModule="My_tasks__project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="chartsStoryBoard" id="Tf1-Pl-ZLj" customClass="ChartsViewController" customModule="My_tasks__project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DWq-bj-fTw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -165,27 +167,51 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="paz-Uc-rIN">
                                 <rect key="frame" x="0.0" y="63" width="414" height="745"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="chart.pie.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Vpj-Wb-7HZ" customClass="PieChartView" customModule="Charts">
-                                        <rect key="frame" x="20" y="10.5" width="374" height="329"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="330" id="2a4-we-03W"/>
-                                        </constraints>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="chart.pie.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="PDM-Cp-C7O" customClass="PieChartView" customModule="Charts">
-                                        <rect key="frame" x="20" y="350.5" width="374" height="329"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="330" id="W33-OK-RXm"/>
-                                        </constraints>
-                                    </imageView>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1OL-es-aqJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="745"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3Fk-kx-BqC">
+                                            <size key="itemSize" width="300" height="250"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ChartCell" id="BK1-OT-EFX" customClass="ChartViewCell" customModule="My_tasks__project" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="X6J-WA-LAb">
+                                                    <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" image="chart.pie.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="xzi-9P-A8X" customClass="PieChartView" customModule="Charts">
+                                                            <rect key="frame" x="0.0" y="0.5" width="20" height="19"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="xzi-9P-A8X" firstAttribute="top" secondItem="X6J-WA-LAb" secondAttribute="top" id="5og-ri-Uwa"/>
+                                                        <constraint firstItem="xzi-9P-A8X" firstAttribute="leading" secondItem="X6J-WA-LAb" secondAttribute="leading" id="dRZ-5l-vOh"/>
+                                                        <constraint firstAttribute="trailing" secondItem="xzi-9P-A8X" secondAttribute="trailing" id="tGX-mD-Aht"/>
+                                                        <constraint firstAttribute="bottom" secondItem="xzi-9P-A8X" secondAttribute="bottom" id="vjU-QK-38Q"/>
+                                                    </constraints>
+                                                </collectionViewCellContentView>
+                                                <connections>
+                                                    <outlet property="PieChartView" destination="xzi-9P-A8X" id="OiE-Jz-kFG"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                        </cells>
+                                        <connections>
+                                            <outlet property="dataSource" destination="Tf1-Pl-ZLj" id="IVr-gQ-t9w"/>
+                                            <outlet property="delegate" destination="Tf1-Pl-ZLj" id="iKY-GO-G3i"/>
+                                        </connections>
+                                    </collectionView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="PDM-Cp-C7O" firstAttribute="top" secondItem="Vpj-Wb-7HZ" secondAttribute="bottom" constant="10" id="BO6-N3-YF5"/>
-                                    <constraint firstItem="PDM-Cp-C7O" firstAttribute="leading" secondItem="paz-Uc-rIN" secondAttribute="leading" constant="20" id="Exy-ys-vKU"/>
-                                    <constraint firstAttribute="trailing" secondItem="PDM-Cp-C7O" secondAttribute="trailing" constant="20" id="JzK-JA-GtB"/>
-                                    <constraint firstItem="Vpj-Wb-7HZ" firstAttribute="top" secondItem="paz-Uc-rIN" secondAttribute="top" constant="10" id="exp-Th-abh"/>
-                                    <constraint firstItem="Vpj-Wb-7HZ" firstAttribute="leading" secondItem="paz-Uc-rIN" secondAttribute="leading" constant="20" id="lYN-f5-cVU"/>
-                                    <constraint firstAttribute="trailing" secondItem="Vpj-Wb-7HZ" secondAttribute="trailing" constant="20" id="nJu-QH-uft"/>
+                                    <constraint firstAttribute="bottom" secondItem="1OL-es-aqJ" secondAttribute="bottom" id="D8Q-an-EAh"/>
+                                    <constraint firstItem="1OL-es-aqJ" firstAttribute="top" secondItem="paz-Uc-rIN" secondAttribute="top" id="Pc1-PF-bmA"/>
+                                    <constraint firstItem="1OL-es-aqJ" firstAttribute="leading" secondItem="paz-Uc-rIN" secondAttribute="leading" id="SHT-Hy-JBN"/>
+                                    <constraint firstAttribute="trailing" secondItem="1OL-es-aqJ" secondAttribute="trailing" id="f8Z-cP-nkz"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -202,13 +228,12 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="pieChartView" destination="Vpj-Wb-7HZ" id="YVS-xY-hU9"/>
-                        <outlet property="pirChartView2" destination="PDM-Cp-C7O" id="dEd-jH-99J"/>
+                        <outlet property="collectionViewCharts" destination="1OL-es-aqJ" id="Sfj-sD-XNv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tCU-oJ-wf7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="882.60869565217399" y="107.8125"/>
+            <point key="canvasLocation" x="1335" y="108"/>
         </scene>
     </scenes>
     <resources>
